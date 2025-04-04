@@ -1,0 +1,31 @@
+.so-do-ban {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.ban {
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.ban-0 {
+    background-color: #d3ffd3; /* Trống */
+}
+
+.ban-1 {
+    background-color: #ffeb3b; /* Đã đặt trước */
+}
+
+.ban-2 {
+    background-color: #4caf50; /* Đang phục vụ */
+}
+
+.ban-3 {
+    background-color: #f44336; /* Đã hủy */
+}
+.ban-icon {
+    margin-bottom: 5px;
+}

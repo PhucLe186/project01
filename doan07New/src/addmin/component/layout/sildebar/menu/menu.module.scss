@@ -1,0 +1,42 @@
+.item {
+    width: 300px;
+}
+.list {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    color: black;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 8px;
+    transition: background-color ease-in-out 200ms;
+    text-decoration: none;
+    font-size: 25px;
+
+    &.active {
+        color: var(--primary);
+        border-radius: 8px;
+    }
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.05);
+    }
+}
+.icon {
+    width: 60%;
+    font-size: 16px;
+    text-align: end;
+    align-items: end;
+    display: flex;
+    justify-content: end;
+}
+.title {
+    margin-right: 0px;
+}
+.className {
+    font-size: 19px;
+
+    padding-left: 30px;
+}
+.top {
+    margin-top: 4px;
+}

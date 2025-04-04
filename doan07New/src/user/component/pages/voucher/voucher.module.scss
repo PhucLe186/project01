@@ -1,0 +1,77 @@
+/* src/App.css */
+.parent {
+    padding-top: 90px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+    text-align: center;
+    color: #333;
+}
+
+.voucher-container {
+    display: flex;
+    gap: 20px;
+}
+
+.voucher-list {
+    flex: 1;
+}
+
+.voucher-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.voucher-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.voucher-list li:hover {
+    background-color: #e9e9e9;
+}
+
+.voucher-detail {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.voucher-detail button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.voucher-detail button:hover {
+    background-color: #218838;
+}
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list {
+    overflow-y: auto;
+    max-height: 300px;
+}

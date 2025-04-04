@@ -1,0 +1,80 @@
+.App {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Nền sáng cho ứng dụng */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    color: red; /* Tiêu đề đỏ */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type='text'],
+select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid red; /* Viền đỏ */
+    border-radius: 5px;
+    background-color: white; /* Nền trắng cho input */
+    color: black; /* Chữ đen trong input */
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: red; /* Nền đỏ cho nút */
+    color: white; /* Chữ trắng trên nút */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: darkred; /* Màu khi hover */
+    }
+}
+
+.table-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.table {
+    background-color: #eaeaea; /* Nền cho từng bàn */
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.available {
+    border-left: 5px solid green; /* Viền xanh cho bàn còn trống */
+}
+
+.occupied {
+    border-left: 5px solid orange; /* Viền cam cho bàn đang phục vụ */
+}
+
+.reserved {
+    border-left: 5px solid yellow; /* Viền vàng cho bàn đã đặt */
+}
+.img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.avt {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

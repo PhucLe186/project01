@@ -1,0 +1,209 @@
+.introduce {
+    padding: 120px 0 60px;
+    background-color: #fdf6e9;
+    background-image: url('../../../../asset/img/nhahanglau.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(253, 246, 233, 0.95);
+        z-index: 1;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 3rem;
+            color: #8b0000;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'Times New Roman', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #4a4a4a;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #e0d5c1;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .icon {
+                font-size: 2.5rem;
+                color: #8b0000;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                color: #4a4a4a;
+                margin-bottom: 15px;
+                font-family: 'Times New Roman', serif;
+            }
+
+            p {
+                color: #666;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    .about-section {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+
+        .about-content {
+            h2 {
+                font-size: 2.5rem;
+                color: #8b0000;
+                margin-bottom: 20px;
+                font-family: 'Times New Roman', serif;
+            }
+
+            p {
+                color: #4a4a4a;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 12px 30px;
+                background-color: #8b0000;
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                font-weight: 500;
+
+                &:hover {
+                    background-color: #660000;
+                }
+            }
+        }
+
+        .about-image {
+            img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    .food-gallery {
+        margin-top: 80px;
+        text-align: center;
+
+        h2 {
+            font-size: 2.5rem;
+            color: #8b0000;
+            margin-bottom: 40px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                }
+
+                .overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    padding: 15px;
+                    color: white;
+                    transform: translateY(100%);
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover {
+                    .overlay {
+                        transform: translateY(0);
+                    }
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 100px;
+
+        .about-section {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+}

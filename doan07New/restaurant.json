@@ -1,0 +1,255 @@
+{
+  "ban": {
+    "ID_Ban_1": {
+      "Tang": 1,
+      "TenBan": "Bàn 1",
+      "TinhTrangBan": 0
+    }
+  },
+  "chitietban": {
+    "ID_ChiTietBan_1": {
+      "ID_Ban": "ID_Ban_1",
+      "ID_GioHang": "ID_GioHang_1",
+      "SoLuong": 2,
+      "TinhTrang": 0
+    }
+  },
+  "chitietmonan": {
+    "ID_MonAn_1": {
+      "ID_NguyenLieu_1": {
+        "DonViTinh": "gram",
+        "SoLuong": 2
+      }
+    }
+  },
+  "chucvu": {
+    "ID_ChucVu_1": {
+      "TenChucVu": "Quản lý"
+    }
+  },
+  "giohang": {
+    "ID_GioHang_1": {
+      "ID_MonAn": "ID_MonAn_1",
+      "NgayTao": "2025-03-03T09:30:00",
+      "SoLuong": 2
+    }
+  },
+  "hoadon": {
+    "ID_HoaDon_1": {
+      "ID_KhachHang": "ID_KhachHang_1",
+      "ID_User": "ID_User_1",
+      "MaVoucher": "VOUCHER2025",
+      "NgayLap": "2025-03-03T10:00:00",
+      "TongTien": 500000
+    }
+  },
+  "khachhang": {
+    "a7fba763-6c4b-40e5-8256-705dea0f979a": {
+      "address": "AAAAAAAAAAAA",
+      "email": "leephuc001@gmail.com",
+      "isVerified": false,
+      "name": "Lê Hoàng Phúc",
+      "phone": "0969119817",
+      "secretPass": "$2b$10$NkkJlpc7reecqytViWTdOOk6AZFR5XJs12dff3uWVSLiZ9FqcNZAy",
+      "userId": "a7fba763-6c4b-40e5-8256-705dea0f979a"
+    },
+    "db9f4c71-4c37-4a0c-870a-734180a85c59": {
+      "address": "An ",
+      "email": "leephucs002@gmail.com",
+      "isVerified": true,
+      "name": "Lê Hoàng Phúc",
+      "phone": "0969119817",
+      "secretPass": "$2b$10$YKnmNABhYEHc8qFGU/Hb8u.tehtnMYwNCz61hKcdvwDYfB9cAUiCW",
+      "userId": "db9f4c71-4c37-4a0c-870a-734180a85c59"
+    }
+  },
+  "loaimonan": {
+    "ID_LoaiMonAn_1": {
+      "TenLoaiMonAn": "Món nước"
+    }
+  },
+
+  "monan": {
+    "ID_MonAn_1": {
+      "TenMonAn": "Bánh Tổ",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 100000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_2": {
+      "TenMonAn": "Bún Qua Cầu",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 120000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_3": {
+      "TenMonAn": "Canh YanDuXian",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 90000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_4": {
+      "TenMonAn": "Cơm Chiên Dương Châu",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 80000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_5": {
+      "TenMonAn": "Chả Giò Quảng Đông",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 110000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_6": {
+      "TenMonAn": "Chow Mein - Mì Xào",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 95000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_7": {
+      "TenMonAn": "Đậu Hủ Tứ Xuyên",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 105000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_8": {
+      "TenMonAn": "Đậu Hủ Thối",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 95000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_9": {
+      "TenMonAn": "Gà An Mây",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 130000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_10": {
+      "TenMonAn": "Gà Kung Pao Tứ Xuyên",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 115000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_11": {
+      "TenMonAn": "Kẹo Hồ Lô",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 75000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_12": {
+      "TenMonAn": "Lẩu Cừu",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 200000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_13": {
+      "TenMonAn": "Mì Hoành Thánh",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 85000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_14": {
+      "TenMonAn": "Mì Tay Kéo Lan Châu",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 95000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_15": {
+      "TenMonAn": "Mì Trường Thọ",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 85000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_16": {
+      "TenMonAn": "Mì Vịt Tiềm",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 120000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_17": {
+      "TenMonAn": "Phật Nhảy Tường",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 300000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_18": {
+      "TenMonAn": "Sủi Cảo",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 90000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_19": {
+      "TenMonAn": "Tôm Xào Hạt Điều",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 140000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_20": {
+      "TenMonAn": "Thịt Đông Pha",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 150000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_21": {
+      "TenMonAn": "Thịt Lợn Chua Ngọt",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 115000,
+      "TrangThai": 1
+    },
+    "ID_MonAn_22": {
+      "TenMonAn": "Vịt Quay Bắc Kinh",
+      "HinhMonAn": "none",
+      "ID_LoaiMonAn": "none",
+      "ThanhTien": 250000,
+      "TrangThai": 1
+    }
+  },
+  "nguyenlieu": {
+    "ID_NguyenLieu_1": {
+      "DonViTinh": "kg",
+      "SoLuongTon": 10,
+      "TenNguyenLieu": "Thịt bò"
+    }
+  },
+  "users": {
+    "ID_User_1": {
+      "CMND_CCCD": "123456789",
+      "DiaChi": "TP.HCM",
+      "ID_ChucVu": "ID_ChucVu_1",
+      "NgaySinh": "1990-01-01",
+      "Password": "hashed_password",
+      "SoDienThoai": "0987654321",
+      "TenUser": "Admin",
+      "Username": "admin"
+    }
+  },
+  "voucher": {
+    "VOUCHER2025": {
+      "GiaTriVoucher": "10%",
+      "HanMucSuDung": 1,
+      "MoTa": "Giảm giá 10% cho hóa đơn trên 200k",
+      "NgayHetHan": "2025-12-31"
+    }
+  }
+}

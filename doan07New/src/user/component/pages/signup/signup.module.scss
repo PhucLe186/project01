@@ -1,0 +1,100 @@
+.flase {
+    border-color: red;
+}
+.innput {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    &:focus {
+        box-shadow: none;
+        background: none;
+        outline: none;
+        border: 2px solid;
+    }
+    &:not(:placeholder-shown) {
+        border-color: red;
+        &.true {
+            border-color: green;
+        }
+    }
+}
+
+.innput1 {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    &:focus {
+        box-shadow: none;
+        background: none;
+        outline: none;
+        border: 2px solid;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fc; /* Màu nền nhẹ */
+}
+
+.formBox {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    width: 100%;
+    max-width: 400px; /* Chiều rộng cố định của form */
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4caf50; /* Màu nền của nút */
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: #45a049; /* Màu nền khi hover */
+    }
+}
+
+.note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #4caf50;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
