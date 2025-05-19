@@ -13,8 +13,14 @@ async table(req, res) {
 async addtable (req, res){
     try {
         const newTable = req.body;
-        const ref = db.ref('ban').push();
-        await ref.set(newTable);
+        const ref = db.ref('ban');
+       
+        const randomNum = Math.floor(Math.random() * 1000);
+        const paddedNum = randomNum.toString().padStart(3, '0');
+        const ID_Ban= `MB-${paddedNum}`;
+        const table= db.ref(`ban/${ID_Ban}`)
+        await table.set(newTable);
+        console.log(table)
         res.json({ id: ref.key, ...newTable });
     } catch (error) {
         res.status(500).send(error);

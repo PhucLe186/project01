@@ -20,33 +20,38 @@ async book(req, res){
     if (!TenKhachHang || !ID_Ban || !SoDienThoai || !SoLuong || !ThoiGian) {
       return res.status(400).json({ message: "Thiếu dữ liệu đặt bàn" });
     }
-    const datatable= (await db.ref('ban').child(ID_Ban).once("value")).val();
-    const TenBan=datatable.TenBan
-    const Tang=datatable.Tang
+    
+    // const datatable= (await db.ref('ban').child(ID_Ban).once("value")).val();
+    // const TenBan=datatable.TenBan
+    // const Tang=datatable.Tang
+    
 ///////////////////////////////////////////////////////////////////////////////////////////
     const Cart= db.ref(`GioHang/${UserID}`);
     const snapshot= await Cart.once("value")
-    
  
     if(!snapshot.exists()){
       return res.status(400).json({ message: 'giỏ hàng trống' });
     }
     const Datacart= (snapshot.val());
 
-   
+    
     let tongtien=0
     for(const id in Datacart){
       const mon=Datacart[id]
       tongtien+=mon.ThanhTien*mon.soLuong
       
     }  
+       const number = Math.floor(10000000 + Math.random() * 90000000); // đảm bảo đủ 8 chữ số
+  
+      const Ma_HoaDon=`HD${number}`
       const ID_ChiTietBan= db.ref(`chitietban`).push().key; 
       const datban=db.ref(`chitietban/${ID_ChiTietBan}`);
-      
+       console.log('14')
       await datban.set({
         UserID,
+        Ma_HoaDon,
+        ID_Ban, 
         TenKhachHang,
-        TenBan, 
         SoDienThoai, 
         SoLuong, 
         ThoiGian,
@@ -55,8 +60,9 @@ async book(req, res){
         trangthai: 1,
         ThanhTien,
         TongTien,
-        Tang
+       
       })
+     
       await db.ref(`ban/${ID_Ban}`).update({TinhTrangBan:1})
       await Cart.remove();
       return res.status(200).json({success: true, message: "đặt bàn thành công"})

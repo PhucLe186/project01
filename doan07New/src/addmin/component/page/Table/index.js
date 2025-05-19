@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 function App() {
     const [tables, setTables] = useState([]);
     const [search, setSearch] = useState({ Tang: '', TinhTrangBan: '' });
-    const [newTable, setNewTable] = useState({ number: '', status: 'available' });
+    const [newTable, setNewTable] = useState({ TenBan: '', TinhTrangBan: 0, Tang:'' });
 
     useEffect(() => {
         const fetchTables = async () => {
@@ -28,9 +28,9 @@ function App() {
 
     const addTable = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/tables/addtable', newTable);
+            const response = await axios.post('http://localhost:5000/tables/add', newTable);
             setTables([...tables, response.data]);
-            setNewTable({ number: '', status: 'available' });
+            setNewTable({ TenBan: '', TinhTrangBan: 0 });
         } catch (error) {
             console.error('Lỗi khi thêm bàn:', error);
         }
@@ -153,14 +153,17 @@ function App() {
             <input
                 type="text"
                 placeholder="Số Bàn"
-                value={newTable.number}
-                onChange={(e) => setNewTable({ ...newTable, number: e.target.value })}
-            />
+                value={newTable.TenBan}
+               onChange={(e) => {
+                const input = e.target.value;
+    const tenBan = input.startsWith("Bàn ") ? input : `Bàn ${input}`;
+    setNewTable({ ...newTable, TenBan: tenBan });
+}}/>
             <input
-                type="text"
-                placeholder="Số Ghế"
-                value={newTable.seats}
-                onChange={(e) => setNewTable({ ...newTable, seats: e.target.value })}
+                type="number"
+                placeholder="Tầng"
+                value={newTable.Tang}
+                onChange={(e) => setNewTable({ ...newTable, Tang: e.target.value })}
             />
             <button className={cx('button')} onClick={addTable}>
                 Thêm Bàn

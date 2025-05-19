@@ -15,87 +15,149 @@ h2 {
 
 /* Bảng danh sách đặt bàn */
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-collapse: separate; /* để border-radius hiệu quả */
+  border-spacing: 0 12px; /* khoảng cách giữa các dòng */
+  font-family: 'Lato', sans-serif;
+  background-color: #fffdfa; /* nền trắng ngà dịu nhẹ */
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.15); /* bóng vàng kim nhẹ */
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.table th,
-.table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
+.table thead tr {
+  background-color: #d4af37; /* vàng kim */
+  color: white;
+  font-weight: 700;
+  text-align: left;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.table th {
-    background: #007bff;
-    color: white;
+.table thead th {
+  padding: 14px 20px;
 }
 
-.table tr:nth-child(even) {
-    background: #f2f2f2;
+.table tbody tr {
+  background-color: #fffdfa;
+  transition: background-color 0.3s ease;
+  cursor: default;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.1);
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
-/* Các nút hành động */
-.edit-btn,
-.delete-btn,
-.save-btn,
-.add-btn {
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin: 5px;
+.table tbody tr:hover {
+  background-color: #f7f3e8;
 }
 
-.edit-btn {
-    background: #ffc107;
-    color: white;
+.table tbody td {
+  padding: 12px 20px;
+  vertical-align: middle;
+  color: #333;
+  font-size: 15px;
 }
 
-.save-btn {
-    background: #28a745;
-    color: white;
+.table tbody td input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1.5px solid #d4af37;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.table tbody td input:focus {
+  border-color: #a17a1e;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
 }
 
 .delete-btn {
-    background: #dc3545;
-    color: white;
+  background-color: #d4af37;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
 }
 
-.add-btn {
-    background: #007bff;
-    color: white;
+.save-btn:hover {
+  background-color: #b28e23;
 }
 
 /* Form thêm khách hàng mới */
 .add-customer-form {
-    margin-top: 20px;
-    padding: 15px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  // căn giữa form
+  gap: 1rem;
+
+  input,
+  select {
+    width: 100%;
+    max-width: 400px; // giới hạn độ rộng
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Lato', sans-serif;
+
+    &:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+    }
+  }
 }
 
-.add-customer-form h3 {
-    margin-bottom: 15px;
-    color: #333;
+.money-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;  // ngang bằng form
+  margin: 0 auto; // căn giữa
+
+  .money-input {
+    width: 100%;
+    padding-right: 3rem;  // để dành chỗ nút +
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+
+    &:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+    }
+  }
+
+  .money-add-button {
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d4af37;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #b88d2a;
+    }
+  }
 }
 
-.add-customer-form input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-.select {
-    width: 80%;
-}

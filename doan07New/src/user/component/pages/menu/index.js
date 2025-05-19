@@ -27,6 +27,7 @@ function Menu() {
         };
         fetchMenu();
     }, []);
+    console.log(menuItem)
 
     const addcart = async (news) => {
         if (news.TrangThai === 'hết') {

@@ -51,28 +51,28 @@ const CheckoutPage = () => {
     const handlePaymentSubmit = async (e) => {
         e.preventDefault();
         setIsProcessing(true);
-        try {
-            // Gửi toàn bộ thông tin đơn hàng
-            const response = await axios.post(
-                'http://localhost:5000/api/bills/addbill',
-                {
-                    orderId: infor[0].ID_chitietban,
-                },
-                {
-                    withCredentials: true,
-                },
-            );
-            if (response.data.success) {
+        // try {
+        //     // Gửi toàn bộ thông tin đơn hàng
+        //     const response = await axios.post(
+        //         'http://localhost:5000/api/bills/addbill',
+        //         {
+        //             orderId: infor[0].ID_chitietban,
+        //         },
+        //         {
+        //             withCredentials: true,
+        //         },
+        //     );
+        //     if (response.data.success) {
                 alert('Đặt hàng thành công!');
                 navigate(routesconfig.home);
-            } else {
-                alert('Đặt hàng thất bại: ' + (response.data.message || 'Lỗi không xác định'));
-            }
-        } catch (error) {
-            alert('Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại.');
-        } finally {
-            setIsProcessing(false);
-        }
+        //     } else {
+        //         alert('Đặt hàng thất bại: ' + (response.data.message || 'Lỗi không xác định'));
+        //     }
+        // } catch (error) {
+        //     alert('Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại.');
+        // } finally {
+        //     setIsProcessing(false);
+        // }
     };
 
     return (
@@ -86,7 +86,7 @@ const CheckoutPage = () => {
                             <h2 className={styles.sectionTitle}>Thông tin đơn hàng</h2>
                             <div className={styles.orderInfo}>
                                 <p>
-                                    Mã đơn hàng: <strong>{infor[0]?.ID_chitietban}</strong>
+                                    Mã đơn hàng: <strong>{infor[0]?.Ma_HoaDon}</strong>
                                 </p>
                                 <p>Ngày đặt: {infor[0]?.ThoiGian}</p>
                             </div>

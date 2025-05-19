@@ -1,60 +1,33 @@
-.menu {
+
+.wrapper{
     border-right: solid;
     width: 300px;
     position: fixed;
     z-index: 9999;
     height: 100vh;
 }
-.logo {
-    width: 200px;
-    height: 200px;
-    font-size: 30px;
+.menu{
+    width: auto;
+    height: auto;
 }
-// .submenu {
-//     background-color: rgba(22, 24, 35, 0.1);
-// }
-// @keyframes dropdown {
-//     from {
-//         opacity: 0;
-//         transform: translateY(-5px);
-//     }
-//     to {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// }
+.logout{
+    margin-top: 20px;
+    border-top: rgba(22, 24, 35, 0.3) solid ;
+    padding-top: 10px;
+}
 
-// .animate-dropdown {
-//     animation: dropdown 0.3s ease-in-out;
-// }
 
-/* Bỏ viền và thêm hiệu ứng hover cho button */
+.logo {
+    display: flex;
+    justify-content: center;
+    min-width: 60px;
+    border-radius: 6px;
+    font-size: 80px;
+    margin: 10px 32px;
+}
 .dropdown-btn {
     border: none;
     background: none;
     outline: none;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Thêm hiệu ứng khi hover */
-}
-
-.dropdown-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Màu nền khi hover */
-}
-
-/* Bỏ viền và thêm hiệu ứng hover cho dropdown */
-.dropdown-content {
-    border: none;
-    transition: transform 0.3s ease; /* Thêm hiệu ứng khi mở dropdown */
-}
-
-/* Thêm hiệu ứng hover cho từng item */
-.dropdown-item {
-    border: none;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Màu nền khi hover */
-    transform: translateX(5px); /* Di chuyển nhẹ khi hover */
 }

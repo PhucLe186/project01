@@ -71,3 +71,23 @@
         text-decoration: underline;
     }
 }
+.logout{
+    
+    border: none;
+    transform: all 0.5s;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: transparent;
+    color: black;
+    width: 278px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    margin-left: 15px;
+    padding-top: 25px;
+    &:hover{
+        background-color: rgba(22, 24, 35, 0.1);
+        border-radius:10px ;
+    }
+}

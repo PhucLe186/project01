@@ -3,19 +3,21 @@ import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import styles from './BillForm.module.scss';
 
+
 const BillForm = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const existingBill = location.state?.bill;
 
+    console.log(existingBill)
     const [bill, setBill] = useState({
-        customer: '',
-        table: '',
-        total: 0,
-        status: 'Chưa thanh toán',
-        items: [],
-    });
+  trangthai: 'Chưa thanh toán',
+  MonAn: [],
+  TenKhachHang: '',
+  TenBan: '',
+  ThanhTien: 0,
+});
 
     const [newItem, setNewItem] = useState({ name: '', quantity: 1, price: '' });
 
@@ -28,7 +30,7 @@ const BillForm = () => {
     useEffect(() => {
         const newTotal = bill[0]?.MonAn.reduce((sum, item) => sum + item.Gia * item.SoLuong, 0);
         setBill((prevBill) => ({ ...prevBill, total: newTotal }));
-    }, [bill[0]?.MonAn]);
+    }, [bill.MonAn]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -79,6 +81,7 @@ const BillForm = () => {
             alert('Lỗi khi xử lý hóa đơn: ' + (error.response?.data?.message || 'Không xác định'));
         }
     };
+    
 
     return (
         <div className={styles.container}>
@@ -86,71 +89,53 @@ const BillForm = () => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <label>
                     Tên khách hàng:
-                    <input type="text" name="customer" value={bill.customer} onChange={handleChange} required />
+                    <input type="text" name="customer" value={bill.TenKhachHang} readOnly />
                 </label>
 
                 <label>
                     Số bàn:
-                    <input type="number" name="table" value={bill.table} onChange={handleChange} required />
+                    <input type="text" name="table" value={bill.TenBan} readOnly />
                 </label>
 
                 <label>
                     Tổng tiền:
-                    <input type="number" name="total" value={bill.total} readOnly />
+                    <input type="number" name="total" value={bill.ThanhTien} readOnly />
                 </label>
 
                 <label>
                     Trạng thái:
-                    <select name="status" value={bill.status} onChange={handleChange}>
+                    <select name="status" value={bill[0]?.trangthai} onChange={handleChange}>
                         <option value="Chưa thanh toán">Chưa thanh toán</option>
                         <option value="Đã thanh toán">Đã thanh toán</option>
                     </select>
                 </label>
 
-                <h3>Danh sách món ăn</h3>
-                <div className={styles.itemInput}>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Tên món"
-                        value={newItem.name}
-                        onChange={handleItemChange}
-                        required
-                    />
-                    <input
-                        type="number"
-                        name="quantity"
-                        placeholder="Số lượng"
-                        min="1"
-                        value={newItem.quantity}
-                        onChange={handleItemChange}
-                        required
-                    />
-                    <input
-                        type="number"
-                        name="price"
-                        placeholder="Giá"
-                        value={newItem.price}
-                        onChange={handleItemChange}
-                        required
-                    />
-                    <button type="button" onClick={handleAddItem}>
-                        ➕ Thêm
-                    </button>
-                </div>
+              <h3 className={styles.subTitle}>Danh sách món ăn</h3>
+            <table className={styles.table}>
+                <thead>
+                    <tr>
+                        <th>Món</th>
+                        <th>Đơn giá (VND)</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {bill.MonAn?.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.TenMonAn}</td>
+                            <td>{Number(item.Gia).toLocaleString()}</td>
+                            <td>{item.SoLuong}</td>
+                            <td>{Number(item.Gia * item.SoLuong).toLocaleString()} VND</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
 
-                {bill[0]?.MonAn.length > 0 && (
-                    <ul className={styles.itemList}>
-                        {bill[0]?.MonAn?.map((item, index) => (
-                            <li key={index}>
-                                {item.TenMonAn} - SL: {item.SoLuong} - Giá: {item.Gia.toLocaleString()} VND
-                                <button type="button" onClick={() => handleRemoveItem(index)}>
-                                    ❌
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+            <h3 className={styles.total}>Tổng tiền: {Number(bill.TongTien).toLocaleString()} VND</h3>
+
+
+                
 
                 <div className={styles.actions}>
                     <button type="submit">{id ? 'Lưu chỉnh sửa' : 'Tạo hóa đơn'}</button>

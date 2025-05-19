@@ -17,8 +17,8 @@ const History = () => {
         const fetchTables = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/manage');
-                // Chỉ lấy những bàn đã đặt (status = 1)
-                const data = response.data;
+                
+                const data = response.data.datas;
                 const bookedTables = Object.keys(data)
                     .map((key) => {
                         return {
@@ -26,7 +26,7 @@ const History = () => {
                             ...data[key],
                         };
                     })
-                    .filter((table) => parseInt(table.trangthai) !== 0)
+                    .filter((table) => parseInt(table.trangthai) !== 0 )
                     .map((table) => ({
                         ...table,
                         trangthai: parseInt(table.trangthai),
@@ -70,6 +70,8 @@ const History = () => {
             case 2:
                 return 'Đang phục vụ';
             case 3:
+                return 'hoàn tất';
+            case 4:
                 return 'Đã hủy';
             default:
                 return 'Chưa đặt';
@@ -83,6 +85,8 @@ const History = () => {
             case 2:
                 return 'serving';
             case 3:
+                return 'completed';
+            case 4:
                 return 'cancelled';
             default:
                 return '';
@@ -120,10 +124,10 @@ const History = () => {
                             {currentItems.map((table) => (
                                 <tr key={table.id}>
                                     <td>{table.ID_chitietban}</td>
-                                    <td>{table.TenBan}</td>
+                                    <td>{table.table?.TenBan}</td>
                                     <td>{table.TenKhachHang}</td>
                                     <td>{table.SoLuong}</td>
-                                    <td>{table.Tang}</td>
+                                    <td>{table.table?.Tang}</td>
                                     <td className={cx('time')}>{moment(table.ThoiGian).format('HH:mm DD-MM-YYYY')}</td>
                                     <td>
                                         <span className={cx('status', getStatusClass(table.trangthai))}>

@@ -73,3 +73,31 @@ input, select {
     background: #dc3545;
     color: white;
 }
+.subTitle {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.table th {
+    background: #f8f8f8;
+}
+.total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+

@@ -8,18 +8,13 @@
 }
 .item {
     width: 322px;
-    height: 420px;
+    height: 430px;
     border-radius: 15px;
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     background-color: white;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    // background-color: #8b0000;
-    // background-color: #a52a2a;
-    // background-color: #b22222;
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    // transition: transform 0.2s;
-    // padding: 10px;
+    
     &:hover {
         transform: scale(1.03);
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);

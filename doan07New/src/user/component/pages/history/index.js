@@ -16,14 +16,14 @@ function HistoryBooking() {
                         ...data[key],
                     };
                 });
-                const activeOrders = cartItemsArray.filter((order) => order.trangthai !== 0 && order.trangthai !== 3);
+                const activeOrders = cartItemsArray.filter((order) => order.trangthai !== 0 && order.trangthai !== 4);
                 const transformedActiveOrders = activeOrders.map((order) => ({
                     ...order,
                     MonAn: Object.values(order.MonAn).map((mon) => mon.TenMonAn),
                 }));
 
                 // Lọc đơn đã hủy (trangthai === 0)
-                const canceledOrders = cartItemsArray.filter((order) => order.trangthai === 3);
+                const canceledOrders = cartItemsArray.filter((order) => order.trangthai === 4);
                 const transformedCanceledOrders = canceledOrders.map((order) => ({
                     ...order,
                     MonAn: Object.values(order.MonAn).map((mon) => mon.TenMonAn),
@@ -54,11 +54,13 @@ function HistoryBooking() {
     };
     const getStatusClass = (status) => {
         switch (status) {
-            case 1:
+             case 1:
                 return 'booked';
             case 2:
                 return 'serving';
             case 3:
+                return 'completed';
+            case 4:
                 return 'cancelled';
             default:
                 return '';

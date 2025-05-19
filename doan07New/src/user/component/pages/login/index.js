@@ -62,9 +62,6 @@ function Login() {
                         <Button forgot to={routesconfig.fogot}>
                             Forgot password?
                         </Button>
-                        // <a href="#" className={cx('forgotPassword')}>
-                        //     Forgot password?
-                        // </a>
                     )}
                     <button className={cx('button')} type="submit">
                         {cx('Login')}

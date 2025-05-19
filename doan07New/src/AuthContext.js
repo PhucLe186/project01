@@ -5,13 +5,27 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [admin, setAdmin] = useState(null)
 
     useEffect(() => {
-        axios
-            .get('http://localhost:5000/auth/check', { withCredentials: true })
-            .then((res) => setUser(res.data.user || res.data.admin))
-            .catch(() => setUser(null));
-    }, []);
+  const fetchData = async () => {
+    try {
+      const [userRes, adminRes] = await Promise.all([
+        axios.get('http://localhost:5000/auth/check', { withCredentials: true }),
+        axios.get('http://localhost:5000/admin/check', { withCredentials: true })
+      ]);
+      setUser(userRes.data.user);
+      setAdmin(adminRes.data.admin);
+    } catch (error) {
+      setUser(null);
+      setAdmin(null);
+    }
+  };
+
+  
+  fetchData();
+}, []);
+
 
     const Login = async (email, password) => {
         try {
@@ -29,11 +43,11 @@ export const AuthProvider = ({ children }) => {
     const Loginadmin = async (email, password) => {
         try {
             const res = await axios.post(
-                'http://localhost:5000/auth/admin',
+                'http://localhost:5000/admin/login',
                 { email, password },
                 { withCredentials: true },
             );
-            setUser(res.data.admin);
+            setAdmin(res.data.admin);
         } catch (error) {
             alert(error.response?.data?.message || 'Đăng nhập thất bại');
         }
@@ -45,6 +59,12 @@ export const AuthProvider = ({ children }) => {
             setUser(null);
         }
     };
+    const logoutadmin = async () => {
+        const response = await axios.post('http://localhost:5000/admin/logout', {}, { withCredentials: true });
+        if (response.data.success) {
+            setAdmin(null);
+        }
+    };
 
-    return <AuthContext.Provider value={{ user, Login, logout, Loginadmin }}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{ user, admin,  Login, Loginadmin, logout, logoutadmin }}>{children}</AuthContext.Provider>;
 };

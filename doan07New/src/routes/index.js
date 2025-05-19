@@ -24,6 +24,7 @@ import BookingHistory from '~/user/component/pages/history/index';
 import Introduce from '~/user/component/pages/introduce';
 import CheckoutPage from '~/user/component/pages/checkout';
 import Loginadmin from '~/addmin/component/page/login';
+import BillNow from '~/addmin/component/page/billNow/BillList';
 
 const publicRoutes = [
     { path: routesconfig.home, component: home },
@@ -39,7 +40,7 @@ const publicRoutes = [
     { path: routesconfig.staff, component: Staff, layout: Defaultlayout },
     { path: routesconfig.member, component: member, layout: Defaultlayout },
     { path: routesconfig.Table, component: Table, layout: Defaultlayout },
-    { path: routesconfig.admin, component: Dashboard, layout: Defaultlayout },
+    { path: routesconfig.dashboard, component: Dashboard, layout: Defaultlayout },
     { path: routesconfig.history, component: History, layout: Defaultlayout },
     { path: routesconfig.billist, component: BillList, layout: Defaultlayout },
     { path: routesconfig.biifrom, component: BillForm, layout: Defaultlayout },
@@ -49,5 +50,7 @@ const publicRoutes = [
     { path: routesconfig.checkout, component: CheckoutPage },
     { path: routesconfig.voucher, component: Voucher, layout: Onlyheader },
     { path: routesconfig.introduce, component: Introduce, layout: Onlyheader },
+    { path: routesconfig.billNow, component: BillNow, layout: Defaultlayout },
+
 ];
 export { publicRoutes };

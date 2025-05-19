@@ -32,6 +32,7 @@
         "react-responsive": "^10.0.0",
         "react-router-dom": "^7.1.2",
         "react-scripts": "5.0.1",
+        "react-to-print": "^3.1.0",
         "recharts": "^2.15.1",
         "tippy.js": "^6.3.7",
         "web-vitals": "^4.2.4"

@@ -7,6 +7,7 @@ const Detail= require('./Detail')
 const table = require('./table')
 const manage = require('./manage')
 const Bill= require('./bill');
+const admin= require('./admin')
 const customer=require('./customer')
 
 function route(app) {
@@ -20,6 +21,7 @@ function route(app) {
   app.use('/manage', manage);
   app.use('/api/bills', Bill);
   app.use('/customer', customer)
+  app.use('/admin', admin)
 
 
 }

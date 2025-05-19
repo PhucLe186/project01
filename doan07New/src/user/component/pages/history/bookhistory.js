@@ -21,9 +21,8 @@ const LichSuDatBan = ({ put, abort, huyDon, getStatus }) => {
                     <table className={cx('table')}>
                         <thead>
                             <tr className={cx('headerRow')}>
-                                <th className={cx('cell')}>Mã đơn</th>
-                                <th className={cx('cell')}>Ngày đặt</th>
-
+                                <th className={cx('cell')}>Mã Bàn</th>
+                                <th className={cx('cell')}>Ngày đến</th>
                                 <th className={cx('cell')}>Tổng tiền</th>
                                 <th className={cx('cell')}>Trạng thái</th>
                                 <th className={cx('cell')}>Món đã đặt</th>
@@ -45,13 +44,18 @@ const LichSuDatBan = ({ put, abort, huyDon, getStatus }) => {
                                             {moment(item.ThoiGian).format('HH:mm DD-MM-YYYY')}
                                         </td>
 
-                                        <td className={cx('cell')}>{Number(item.ThanhTien).toLocaleString()} VNĐ</td>
-                                        <td className={cx('cell', getStatus(item.trangthai))}>
-                                            {item.trangthai === 1
-                                                ? ' đã đặt '
-                                                : item.trangthai === 2
-                                                ? 'đang phục vụ'
-                                                : ''}
+                                        <td className={cx('cell')}>{Number(item.TongTien).toLocaleString()} VNĐ</td>
+                                        <td>
+                                            {' '}
+                                            <div className={cx('cell', getStatus(item.trangthai))}>
+                                                {item.trangthai === 1
+                                                    ? ' đã đặt trước '
+                                                    : item.trangthai === 2
+                                                    ? 'đang phục vụ'
+                                                    : item.trangthai === 3
+                                                    ? 'đã thanh toán'
+                                                    : ''}
+                                            </div>
                                         </td>
                                         <td className={cx('cell')}>{item.MonAn.join(', ')}</td>
                                         <td className={cx('cell')}>
@@ -97,8 +101,10 @@ const LichSuDatBan = ({ put, abort, huyDon, getStatus }) => {
                                         <td className={cx('cell')}>{item.ThoiGian}</td>
 
                                         <td className={cx('cell')}>{Number(item.ThanhTien).toLocaleString()} VNĐ</td>
-                                        <td className={cx('cell', getStatus(item.trangthai))}>
-                                            {item.trangthai === 3 ? 'đã hủy ' : ''}
+                                        <td>
+                                            <div className={cx('cell', getStatus(item.trangthai))}>
+                                                {item.trangthai === 4 ? 'đã hủy ' : ''}
+                                            </div>
                                         </td>
                                         <td className={cx('cell')}>{item.MonAn}</td>
                                     </tr>

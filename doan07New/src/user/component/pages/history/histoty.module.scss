@@ -36,23 +36,58 @@
 }
 
 .cell {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
+    padding: 2px 4px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+    margin: auto;
+    gap: 8px;
+    width: fit-content;
+    &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+    &.booked {
+        background-color: #e3f2fd;
+        color: #1976d2;
+
+        &::before {
+            background-color: #1976d2;
+        }
+    }
+
+    &.serving {
+        background-color: #fff3e0;
+        color: #f57c00;
+
+        &::before {
+            background-color: #f57c00;
+        }
+    }
+    &.completed {
+        background-color: #fff3e0;
+        color: #2ecc71;
+
+        &::before {
+            background-color: #2ecc71;
+        }
+    }
+
+    &.cancelled {
+        background-color: #ffebee;
+        color: #d32f2f;
+
+        &::before {
+            background-color: #d32f2f;
+        }
+    }
 }
 
 .dataRow:nth-child(even) {
     background-color: #f2f2f2;
-}
-
-.statusServed {
-    color: green;
-    font-weight: bold;
-}
-
-.statusCanceled {
-    color: red;
-    font-weight: bold;
 }
 
 .noData {
@@ -89,29 +124,5 @@
     }
     &:disabled {
         background-color: #e57373;
-    }
-}
-
-.booked {
-    color: #f57c00;
-
-    &::before {
-        background-color: #f57c00;
-    }
-}
-
-.serving {
-    color: green;
-
-    &::before {
-        background-color: green;
-    }
-}
-
-.cancelled {
-    color: #d32f2f;
-
-    &::before {
-        color: #d32f2f;
     }
 }

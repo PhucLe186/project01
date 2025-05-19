@@ -12,7 +12,7 @@ const routes = {
     booking: '/booking',
     cart: '/cart',
     reset: '/reset',
-    admin: '/dashboard',
+    dashboard: '/dashboard',
     checkout: '/checkout',
     history: '/admin/history',
     contact: '/contact',
@@ -23,5 +23,6 @@ const routes = {
     biifrom: '/bills/edit/:id',
     introduce: '/introduce',
     loginadmin: '/admin',
+    billNow:'/billNow'
 };
 export default routes;

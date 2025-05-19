@@ -47,9 +47,16 @@ class DetailController {
             return res.status(400).json({ message: 'Đơn hàng đã được hủy trước đó' });
         }  
       
-        await data.update({ trangthai:3 })
+        await data.update({ trangthai:4 })
         res.json({success: true})
-    
+
+        const ID_Ban=item.ID_Ban
+        console.log(ID_Ban)
+        const table= db.ref(`ban/${ID_Ban}`)
+        
+
+        await table.update({TinhTrangBan:0})
+
     }catch(error){
         res.status(500).json({ error: 'lỗi server'})
     }

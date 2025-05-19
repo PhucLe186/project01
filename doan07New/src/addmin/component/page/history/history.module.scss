@@ -133,6 +133,14 @@
                         background-color: #f57c00;
                     }
                 }
+                 &.completed {
+                    background-color: #fff3e0;
+                     color: #2ecc71;
+
+                    &::before {
+                        background-color: #2ecc71;
+                    }
+                }
 
                 &.cancelled {
                     background-color: #ffebee;

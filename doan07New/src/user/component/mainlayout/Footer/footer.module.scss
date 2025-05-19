@@ -1,16 +1,100 @@
-.wrapper {
-    height: 220px;
-    display: flex;
-    background-image: url('../../../../asset/img/12.jpg');
-    background-size: 100% 100%;
-}
-.iner1 {
-    margin-right: 5rem;
-    width: 500px;
+.footer {
+    background-image: url('../../../../asset/img/12.jpg'); // hoặc ảnh bạn chọn
+    background-size: cover;
+    background-position: center;
     color: white;
-}
-.iner2 {
-    margin-right: 1rem;
-    width: 230px;
-    color: white;
+    height: 250px; // ✅ Chiều cao cố định (hoặc dùng max-height nếu bạn muốn giới hạn thay vì cố định)
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    width: 100%;
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        height: 100%;
+        padding: 20px; // ✅ Giảm padding để không vượt quá 250px
+        display: flex;
+        align-items: center;
+    }
+
+    .container {
+        width: 1900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    .about {
+        flex: 1 1 350px;
+        font-size: 14px;
+
+        .logo {
+            color: red;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin: 3px 0;
+            line-height: 1.4;
+        }
+
+        .contactInfo {
+            margin-top: 10px;
+            font-size: 13px;
+
+            svg {
+                margin-right: 6px;
+                color: #ffb400;
+            }
+        }
+
+        .socials {
+            margin-top: 10px;
+
+            a {
+                color: white;
+                font-size: 16px;
+                margin-right: 10px;
+
+                &:hover {
+                    color: #ffb400;
+                }
+            }
+        }
+    }
+
+    .links {
+        flex: 1 1 600px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        div {
+            min-width: 150px;
+
+            h4 {
+                color: red;
+                margin-bottom: 6px;
+                font-size: 16px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                font-size: 13px;
+
+                li {
+                    margin-bottom: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #ffb400;
+                    }
+                }
+            }
+        }
+    }
 }

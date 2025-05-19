@@ -1,10 +1,30 @@
+
 const { db } = require('../../firebaseconfig/firebase');
 class BillsController {
   async  getBills (req, res) {
     try {
         const snapshot = await db.ref("bills").once("value");
-        const bills = snapshot.val() || {};
-        res.status(200).json(bills);
+        const data= snapshot.val()
+        const bills = Object.keys(data).map((key) =>({
+           
+            ID_HoaDon:key,
+            ...data[key]
+        }))
+        console.log(bills)
+        const ids= bills.map(id=>id.ID_Ban)
+
+        const tablesSnapshot= await Promise.all(
+            ids.map(id=> db.ref(`ban/${id}`).once('value'))
+        ) 
+    const tables = tablesSnapshot.map(snap => snap.val());
+
+    const datas = bills.map((bill, index) => ({
+            ...bill,
+            table: tables[index] || null,
+        }));
+console.log(datas)
+    
+        res.status(200).json(datas);
     } catch (error) {
         console.error("❌ Lỗi khi lấy danh sách hóa đơn:", error);
         res.status(500).json({ error: "Lỗi khi lấy danh sách hóa đơn" });
@@ -17,12 +37,18 @@ async getBillById (req, res)  {
     try {
         const snapshot = await db.ref(`bills/${id}`).once("value");
         const bill = snapshot.val();
+        const ids= bill.ID_Ban
+        
+        const data= await db.ref(`ban/${ids}`).once('value')
+        const table=data.val()
 
+        const bigdata= {id,table , ...bill}
+        console.log(bigdata)
         if (!bill) {
             return res.status(404).json({ error: "Hóa đơn không tồn tại" });
         }
 
-        res.status(200).json({ id, ...bill });
+        res.status(200).json( bigdata );
     } catch (error) {
         console.error("❌ Lỗi khi lấy hóa đơn:", error);
         res.status(500).json({ error: "Lỗi khi lấy hóa đơn" });
@@ -39,17 +65,22 @@ async addBill (req, res) {
         }
 
         const data= db.ref('chitietban').child(orderId)
- 
         const snapshot= await data.once('value')
-        const item= (snapshot.val())
-   
-        const newBillRef = db.ref("bills").push().key;
-        const billist= db.ref(`bills/${newBillRef}`)
+        const list = snapshot.val()
+        
+        const item= Object.keys(list).map(key=>({
+            ...list
+        }))
+
+
+        const HD_ID=item[0]?.Ma_HoaDon
+        const billist= db.ref(`bills/${HD_ID}`)
         await billist.set({
-            ...item,
+            ...item[0],
             note:null,
             trangthai:'chưa thanh toán' }
         )
+        data.update({trangthai:2})
 
         res.status(201).json({ success: true, message: "Thêm hóa đơn thành công", });
     } catch (error) {

@@ -8,7 +8,7 @@ const BillDetail = () => {
     const navigate = useNavigate();
     const [bill, setBill] = useState([]);
 
-    // 🔹 Load dữ liệu từ API hoặc database
+    
     useEffect(() => {
         const fetchBill = async () => {
             try {
@@ -18,6 +18,7 @@ const BillDetail = () => {
                     ...list,
                 }));
                 console.log('data là', data);
+
                 const transform = data.map((order) => ({
                     ...order,
 
@@ -29,7 +30,7 @@ const BillDetail = () => {
                     })),
                 }));
 
-                setBill(transform);
+                setBill(transform[0]);
             } catch (error) {
                 console.error('❌ Không tìm thấy hóa đơn!', error);
                 setBill(null);
@@ -37,14 +38,14 @@ const BillDetail = () => {
         };
 
         fetchBill();
-    }, [id]);
+    }, []);
     console.log(bill);
     if (!bill) {
         return <h2 className={styles.notFound}>Hóa đơn không tồn tại!</h2>;
     }
 
     const handleEdit = () => {
-        navigate(`/bills/edit/${bill[0]?.id}`, { state: { bill } });
+        navigate(`/bills/edit/${bill.id}`, { state: { bill } });
     };
 
     const handleDelete = async () => {
@@ -60,18 +61,18 @@ const BillDetail = () => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Chi tiết hóa đơn #{bill[0]?.id}</h2>
+            <h2 className={styles.title}>Chi tiết hóa đơn #{bill.id}</h2>
             <div className={styles.info}>
                 <p>
-                    <strong>Khách hàng:</strong> {bill[0]?.TenKhachHang}
+                    <strong>Khách hàng:</strong> {bill.TenKhachHang}
                 </p>
                 <p>
-                    <strong>Bàn:</strong> {bill[0]?.TenBan}
+                    <strong>Bàn:</strong> {bill.table?.TenBan}
                 </p>
                 <p>
                     <strong>Trạng thái:</strong>
                     <span className={bill.trangthai === 'Đã thanh toán' ? styles.paid : styles.unpaid}>
-                        {bill[0]?.trangthai}
+                        {bill.trangthai}
                     </span>
                 </p>
             </div>
@@ -87,7 +88,7 @@ const BillDetail = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {bill[0]?.MonAn?.map((item, index) => (
+                    {bill.MonAn?.map((item, index) => (
                         <tr key={index}>
                             <td>{item.TenMonAn}</td>
                             <td>{Number(item.Gia).toLocaleString()}</td>
@@ -98,7 +99,7 @@ const BillDetail = () => {
                 </tbody>
             </table>
 
-            <h3 className={styles.total}>Tổng tiền: {Number(bill[0]?.TongTien).toLocaleString()} VND</h3>
+            <h3 className={styles.total}>Tổng tiền: {Number(bill.TongTien).toLocaleString()} VND</h3>
 
             <div className={styles.actions}>
                 <button className={styles.editButton} onClick={handleEdit}>
