@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './menulist.module.scss';
 const cx = classNames.bind(styles);
 
-function Menuitem({ menuitem, onClick }) {
+function Menuitem({ menuitem, onClick, selectedMon, Mon, Showitem }) {
     const [category, setCategory] = useState('all');
     const [search, setSearch] = useState('');
 
@@ -28,7 +28,13 @@ function Menuitem({ menuitem, onClick }) {
             </div>
             <div className={cx('child2')}>
                 {data.length > 0 ? (
-                    <Pagination newsList={data} onClick={onClick} />
+                    <Pagination
+                        newsList={data}
+                        onClick={onClick}
+                        selectedMon={selectedMon}
+                        Mon={Mon}
+                        Showitem={Showitem}
+                    />
                 ) : (
                     <div className={cx('text')}> không tìm thấy món ăn</div>
                 )}

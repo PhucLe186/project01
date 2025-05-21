@@ -1,0 +1,506 @@
+{
+    "ban": {
+        "MB-045": {
+            "Tang": "2",
+            "TenBan": "Bàn 8",
+            "TinhTrangBan": 0
+        },
+        "MB-157": {
+            "Tang": "1",
+            "TenBan": "Bàn 4",
+            "TinhTrangBan": 0
+        },
+        "MB-248": {
+            "Tang": "1",
+            "TenBan": "Bàn 1",
+            "TinhTrangBan": 0
+        },
+        "MB-249": {
+            "Tang": "1",
+            "TenBan": "Bàn 5",
+            "TinhTrangBan": 0
+        },
+        "MB-374": {
+            "Tang": "1",
+            "TenBan": "Bàn 2",
+            "TinhTrangBan": 0
+        },
+        "MB-388": {
+            "Tang": "2",
+            "TenBan": "Bàn 10",
+            "TinhTrangBan": 0
+        },
+        "MB-477": {
+            "Tang": "2",
+            "TenBan": "Bàn 11",
+            "TinhTrangBan": 0
+        },
+        "MB-679": {
+            "Tang": "2",
+            "TenBan": "Bàn 12",
+            "TinhTrangBan": 0
+        },
+        "MB-773": {
+            "Tang": "1",
+            "TenBan": "Bàn 3",
+            "TinhTrangBan": 0
+        },
+        "MB-825": {
+            "Tang": "1",
+            "TenBan": "Bàn 6",
+            "TinhTrangBan": 0
+        },
+        "MB-836": {
+            "Tang": "2",
+            "TenBan": "Bàn 9",
+            "TinhTrangBan": 0
+        },
+        "MB-913": {
+            "Tang": "1",
+            "TenBan": "Bàn 7",
+            "TinhTrangBan": 0
+        }
+    },
+    "bills": {
+        "HD21412269": {
+            "ID_ChiTietBan": "-OQer8NhbnLsr0aut0g-",
+            "ThanhTien": 220000,
+            "TongTien": 220000,
+            "phuongthuc": "Tiền mặt",
+            "thoigian": "2025-05-19T23:24:21.181Z",
+            "trangthai": "Đã thanh toán"
+        }
+    },
+    "chitietban": {
+        "-OQer8NhbnLsr0aut0g-": {
+            "ID_Ban": "MB-477",
+            "MonAn": {
+                "ID_MonAn_1": {
+                    "HinhAnhMon": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290775/BanhTo_o9qpq5.jpg",
+                    "TenMonAn": "Bánh Tổ",
+                    "ThanhTien": 100000,
+                    "soLuong": 1
+                },
+                "ID_MonAn_10": {
+                    "HinhAnhMon": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290781/BunQuaCau_ykoaq2.jpg",
+                    "TenMonAn": "Bún Qua Cầu",
+                    "ThanhTien": 120000,
+                    "soLuong": 1
+                }
+            },
+            "SoDienThoai": "0969119817",
+            "SoLuong": "20",
+            "TenKhachHang": "Lê Hoàng Phúc",
+            "ThanhTien": 220000,
+            "ThoiGian": "2025-05-20T06:24",
+            "TongTien": 220000,
+            "UserID": "db9f4c71-4c37-4a0c-870a-734180a85c59",
+            "note": "",
+            "trangthai": 3
+        }
+    },
+    "chitietmonan": {
+        "ID_MonAn_1": {
+            "ID_NguyenLieu_1": {
+                "DonViTinh": "gram",
+                "SoLuong": 2
+            }
+        }
+    },
+    "khachhang": {
+        "ae3239c2-c509-4a3e-b2ce-8f61e5eecf36": {
+            "address": "An Giang",
+            "email": "levandoan200217@gmail.com",
+            "isVerified": false,
+            "name": "Phuc Lê",
+            "phone": "0969119817",
+            "secretPass": "$2b$10$lrxR1klxOxzqFG0d53682OTU/jmSJ1h3c2BIb8.Ylk5DlL6uR6m7W",
+            "userId": "ae3239c2-c509-4a3e-b2ce-8f61e5eecf36"
+        },
+        "d156fdba-0fa8-458c-ba8a-d9aca4c33d5a": {
+            "address": "An Giang",
+            "email": "levandoan200217@gmail.com",
+            "isVerified": false,
+            "name": "Phuc Lê",
+            "phone": "0969119817",
+            "secretPass": "$2b$10$soeQY.llJDhGh4ccaLFr2.sT2D2fFJoGiLSD7c7XGdrBtAVXlD4QK",
+            "userId": "d156fdba-0fa8-458c-ba8a-d9aca4c33d5a"
+        },
+        "db9f4c71-4c37-4a0c-870a-734180a85c59": {
+            "address": "An ",
+            "email": "leephucs002@gmail.com",
+            "isVerified": true,
+            "name": "Lê Hoàng Phúc",
+            "phone": "0969119817",
+            "secretPass": "$2b$10$YKnmNABhYEHc8qFGU/Hb8u.tehtnMYwNCz61hKcdvwDYfB9cAUiCW",
+            "userId": "db9f4c71-4c37-4a0c-870a-734180a85c59"
+        },
+        "ed859602-8adb-47d1-ae6a-617d22ccc761": {
+            "address": "quang trung gò vấp tphcm",
+            "email": "kieungoctuanh2005@gmail.com",
+            "isVerified": true,
+            "name": "Kiều Ngọc Tú Anh",
+            "phone": "0345343005",
+            "secretPass": "$2b$10$F9lI3kHx/TT8l91WlPXAWOHOE8Fbot6ZrMdulwHtot5u5Ffowo7x2",
+            "userId": "ed859602-8adb-47d1-ae6a-617d22ccc761"
+        }
+    },
+    "monan": {
+        "ID_MonAn_1": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290775/BanhTo_o9qpq5.jpg",
+            "LoaiMonAn": "Tráng miệng",
+            "SoLuong": 3,
+            "TenMonAn": "Bánh Tổ",
+            "ThanhTien": 100000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_1"
+        },
+        "ID_MonAn_10": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290781/BunQuaCau_ykoaq2.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 76,
+            "TenMonAn": "Bún Qua Cầu",
+            "ThanhTien": 120000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_11": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290775/CanhYanDuXian_zbsag4.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 90,
+            "TenMonAn": "Canh YanDuXian",
+            "ThanhTien": 90000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_12": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290776/comchienduongchau_yykkju.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 93,
+            "TenMonAn": "Cơm Chiên Dương Châu",
+            "ThanhTien": 80000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_13": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290776/chaGioquangDong_np10hg.jpg",
+            "LoaiMonAn": "Khai vị",
+            "SoLuong": 100,
+            "TenMonAn": "Chả Giò Quảng Đông",
+            "ThanhTien": 110000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_14": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290777/ChowMein-MiXao_vwx0fw.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Chow Mein - Mì Xào",
+            "ThanhTien": 95000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_15": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290777/dauphutuxuyen_qgi8w9.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Đậu Hủ Tứ Xuyên",
+            "ThanhTien": 105000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_16": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290777/DauPhuThoi_pzqdhn.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Đậu Hủ Thối",
+            "ThanhTien": 95000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_17": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/GaAnMay_sirfiv.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Gà An Mây",
+            "ThanhTien": 130000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_18": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/gakungpaotuxuyen_f3kuye.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Gà Kung Pao Tứ Xuyên",
+            "ThanhTien": 115000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_19": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/KeoHoLo_ildobc.jpg",
+            "LoaiMonAn": "Tráng miệng",
+            "SoLuong": 5,
+            "TenMonAn": "Kẹo Hồ Lô",
+            "ThanhTien": 75000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_2": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/LauCuu_jk7nmc.jpg",
+            "LoaiMonAn": "Lẩu",
+            "SoLuong": 51,
+            "TenMonAn": "Lẩu Cừu",
+            "ThanhTien": 200000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_20": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290779/MiHoanhThanh_nluyei.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Mì Hoành Thánh",
+            "ThanhTien": 85000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_21": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290775/MiTayKeoLanChau_o5qwcc.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Mì Tay Kéo Lan Châu",
+            "ThanhTien": 95000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_22": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290775/MiTruongTho_ihfj95.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Mì Trường Thọ",
+            "ThanhTien": 85000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_3": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290776/MiVitTiem_l6rp99.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Mì Vịt Tiềm",
+            "ThanhTien": 120000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_4": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290777/PhatNhayTuong_l6d3x3.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Phật Nhảy Tường",
+            "ThanhTien": 300000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_5": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290777/SuiCAo_ddfrbp.jpg",
+            "LoaiMonAn": "Khai vị",
+            "SoLuong": 5,
+            "TenMonAn": "Sủi Cảo",
+            "ThanhTien": 90000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_6": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/TomXaoHatDieu_bdvccb.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Tôm Xào Hạt Điều",
+            "ThanhTien": 140000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_7": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/ThitDongPha_yfwaey.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Thịt Đông Pha",
+            "ThanhTien": 150000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_8": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290778/ThitLonChuaNgot_h9cnzb.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Thịt Lợn Chua Ngọt",
+            "ThanhTien": 115000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        },
+        "ID_MonAn_9": {
+            "HinhMonAn": "https://res.cloudinary.com/dm1lcegq1/image/upload/v1742290779/vitquaybackinh_yfzizo.jpg",
+            "LoaiMonAn": "Món chính",
+            "SoLuong": 5,
+            "TenMonAn": "Vịt Quay Bắc Kinh",
+            "ThanhTien": 250000,
+            "TrangThai": "còn",
+            "ID_ChiTietMon": "ID_ChiTietMon_2"
+        }
+    },
+    "nguyenlieu": {
+        "ID_NguyenLieu_1": {
+            "DonViTinh": "kg",
+            "SoLuongTon": 10,
+            "TenNguyenLieu": "Thịt bò"
+        }
+    },
+    "users": {
+        "ID_User_1": {
+            "CMND_CCCD": "123456789",
+            "DiaChi": "TP.HCM",
+            "ID_ChucVu": "ID_ChucVu_1",
+            "NgaySinh": "1990-01-01",
+            "SoDienThoai": "0987654321",
+            "TenUser": "Phúc Bảnh",
+            "email": "hoangphuckaito1806@gmail.com",
+            "secretPass": "$2b$10$YKnmNABhYEHc8qFGU/Hb8u.tehtnMYwNCz61hKcdvwDYfB9cAUiCW",
+            "userId": "ae3239c2-c509-4a3e-b2ce-8f61e5eecf36"
+        }
+    },
+    "voucher": {
+        "DISCOUNT50K": {
+            "GiaTriVoucher": "50000",
+            "HanMucSuDung": 2,
+            "MoTa": "Giảm 50.000đ cho hóa đơn từ 300k",
+            "NgayHetHan": "2025-12-31"
+        },
+        "VIP30": {
+            "GiaTriVoucher": "30",
+            "HanMucSuDung": 5,
+            "MoTa": "Giảm 30% cho khách hàng VIP",
+            "NgayHetHan": "2025-12-31"
+        },
+        "VOUCHER2025": {
+            "GiaTriVoucher": "10",
+            "HanMucSuDung": 1,
+            "MoTa": "Giảm giá 10% cho hóa đơn trên 200k",
+            "NgayHetHan": "2025-12-31"
+        },
+        "VOUCHER500K": {
+            "GiaTriVoucher": "20",
+            "HanMucSuDung": 1,
+            "MoTa": "Giảm 20% cho hóa đơn trên 500k",
+            "NgayHetHan": "2025-12-31"
+        }
+    },
+    "ChiTietMonAn": {
+        "ID_ChiTietMon_1": {
+            "MoTa": "Bánh Tổ là món tráng miệng ngọt, thơm hương vani, vị bơ béo ngậy.",
+            "NguyenLieuChinh": ["Bột gạo", "Đường", "Vani", "Bơ"],
+            "CachCheBien": "Trộn bột gạo với đường, thêm vani, hấp trong khuôn rồi rán sơ cho vàng."
+        },
+        "ID_ChiTietMon_2": {
+            "MoTa": "Lẩu Cừu thơm ngọt, nước dùng đậm đà, thịt cừu mềm ngon.",
+            "NguyenLieuChinh": ["Thịt cừu", "Nấm", "Rau thơm", "Gia vị lẩu"],
+            "CachCheBien": "Ninh xương cừu kỹ, thêm gia vị, rau thơm, thịt cừu cắt lát nhúng lẩu."
+        },
+        "ID_ChiTietMon_3": {
+            "MoTa": "Mì Vịt Tiềm là món mì nước với vị thuốc Bắc, vị ngọt thanh của nước dùng.",
+            "NguyenLieuChinh": ["Vịt", "Mì tươi", "Thuốc bắc", "Gia vị"],
+            "CachCheBien": "Hầm vịt với thuốc bắc, nấu nước dùng, luộc mì, ăn kèm rau thơm."
+        },
+        "ID_ChiTietMon_4": {
+            "MoTa": "Phật Nhảy Tường là món ăn đặc sản với nhiều nguyên liệu quý hiếm.",
+            "NguyenLieuChinh": ["Hải sâm", "Vi cá", "Nấm đông cô", "Rượu nếp", "Thịt heo"],
+            "CachCheBien": "Hầm các nguyên liệu trên lửa nhỏ, giữ hương vị thơm ngon, đậm đà."
+        },
+        "ID_ChiTietMon_5": {
+            "MoTa": "Sủi Cảo là món bánh gói nhân thịt hoặc tôm, hấp hoặc chiên giòn.",
+            "NguyenLieuChinh": ["Bột mì", "Thịt xay", "Tôm", "Gia vị"],
+            "CachCheBien": "Trộn nhân, gói vỏ bánh, hấp hoặc chiên cho chín vàng."
+        },
+        "ID_ChiTietMon_6": {
+            "MoTa": "Tôm Xào Hạt Điều là món tôm tươi xào cùng hạt điều béo ngậy.",
+            "NguyenLieuChinh": ["Tôm tươi", "Hạt điều", "Tỏi", "Gia vị xào"],
+            "CachCheBien": "Xào tôm với tỏi và hạt điều, nêm nếm gia vị vừa ăn."
+        },
+        "ID_ChiTietMon_7": {
+            "MoTa": "Thịt Đông Pha là món thịt đông lạnh, thái mỏng, ăn kèm gia vị đặc trưng.",
+            "NguyenLieuChinh": ["Thịt heo", "Gia vị chấm", "Rau sống"],
+            "CachCheBien": "Nấu đông thịt, thái mỏng, ăn kèm rau và nước chấm."
+        },
+        "ID_ChiTietMon_8": {
+            "MoTa": "Thịt Lợn Chua Ngọt là món thịt lợn xào sốt chua ngọt đậm đà.",
+            "NguyenLieuChinh": ["Thịt lợn", "Dứa", "Ớt chuông", "Sốt chua ngọt"],
+            "CachCheBien": "Xào thịt với dứa và ớt chuông, thêm sốt chua ngọt, đảo đều."
+        },
+        "ID_ChiTietMon_9": {
+            "MoTa": "Vịt Quay Bắc Kinh da giòn, thịt mềm, vị đậm đà, ăn kèm bánh và rau.",
+            "NguyenLieuChinh": ["Vịt", "Gia vị quay", "Bánh tráng", "Hành, dưa leo"],
+            "CachCheBien": "Quay vịt cho da giòn, thái miếng, ăn cùng bánh tráng và rau."
+        },
+        "ID_ChiTietMon_10": {
+            "MoTa": "Bún Qua Cầu là món bún nước với nhiều loại nguyên liệu phong phú.",
+            "NguyenLieuChinh": ["Bún", "Thịt heo", "Trứng", "Gia vị nước dùng"],
+            "CachCheBien": "Nấu nước dùng trong, chần bún, thêm thịt, trứng, rau."
+        },
+        "ID_ChiTietMon_11": {
+            "MoTa": "Canh YanDuXian là món canh thơm ngon, thanh mát, giàu dinh dưỡng.",
+            "NguyenLieuChinh": ["Thịt bò", "Rau cải", "Gia vị nêm"],
+            "CachCheBien": "Nấu canh với thịt và rau, nêm gia vị vừa ăn."
+        },
+        "ID_ChiTietMon_12": {
+            "MoTa": "Cơm Chiên Dương Châu là món cơm chiên thập cẩm với nhiều nguyên liệu.",
+            "NguyenLieuChinh": ["Cơm", "Thịt xá xíu", "Tôm", "Đậu Hà Lan", "Trứng"],
+            "CachCheBien": "Chiên cơm cùng thịt, tôm, đậu và trứng, nêm gia vị."
+        },
+        "ID_ChiTietMon_13": {
+            "MoTa": "Chả Giò Quảng Đông là món chả giò giòn rụm, nhân thịt và rau củ.",
+            "NguyenLieuChinh": ["Thịt heo", "Rau củ", "Vỏ bánh tráng"],
+            "CachCheBien": "Cuộn nhân trong bánh tráng, chiên vàng giòn."
+        },
+        "ID_ChiTietMon_14": {
+            "MoTa": "Chow Mein - Mì Xào là món mì xào giòn hoặc mềm cùng rau và thịt.",
+            "NguyenLieuChinh": ["Mì trứng", "Thịt gà", "Rau củ", "Nước sốt xào"],
+            "CachCheBien": "Xào mì với thịt và rau củ, nêm gia vị vừa ăn."
+        },
+        "ID_ChiTietMon_15": {
+            "MoTa": "Đậu Hủ Tứ Xuyên là món đậu phụ cay đặc trưng vùng Tứ Xuyên.",
+            "NguyenLieuChinh": ["Đậu phụ", "Ớt bột", "Gia vị cay"],
+            "CachCheBien": "Xào đậu phụ với nước sốt cay, hành, tỏi."
+        },
+        "ID_ChiTietMon_16": {
+            "MoTa": "Đậu Hủ Thối là món đậu hũ lên men có mùi đặc trưng, vị béo.",
+            "NguyenLieuChinh": ["Đậu hũ lên men", "Gia vị"],
+            "CachCheBien": "Chiên đậu hũ lên men, ăn kèm nước chấm đặc biệt."
+        },
+        "ID_ChiTietMon_17": {
+            "MoTa": "Gà An Mây là món gà nướng thơm ngon, da giòn, thịt mềm.",
+            "NguyenLieuChinh": ["Gà", "Gia vị ướp", "Gia vị nướng"],
+            "CachCheBien": "Ướp gà, nướng trên than hoa hoặc lò nướng."
+        },
+        "ID_ChiTietMon_18": {
+            "MoTa": "Gà Kung Pao Tứ Xuyên là món gà xào cay đặc trưng vùng Tứ Xuyên.",
+            "NguyenLieuChinh": ["Gà", "Ớt", "Đậu phộng", "Gia vị cay"],
+            "CachCheBien": "Xào gà với ớt, đậu phộng, hành tỏi, nước sốt cay."
+        },
+        "ID_ChiTietMon_19": {
+            "MoTa": "Kẹo Hồ Lô là món kẹo truyền thống với lớp đường caramel giòn tan.",
+            "NguyenLieuChinh": ["Đường", "Mạch nha"],
+            "CachCheBien": "Nấu đường tạo caramel, quấn quanh que tạo hình."
+        },
+        "ID_ChiTietMon_20": {
+            "MoTa": "Mì Hoành Thánh là món mì nước nổi tiếng với sợi mì dai, hoành thánh nhân tôm thịt đậm đà, nước dùng ngọt thanh.",
+            "NguyenLieuChinh": ["Mì trứng", "Tôm", "Thịt heo", "Rau cải", "Nước dùng gà"],
+            "CachCheBien": "Nấu nước dùng từ xương gà, luộc mì trứng, làm hoành thánh nhân tôm thịt, sau đó kết hợp và thêm rau cải."
+        },
+        "ID_ChiTietMon_21": {
+            "MoTa": "Mì Tay Kéo Lan Châu là món đặc sản Trung Hoa với sợi mì được kéo tay tươi dai, thịt bò thơm ngon và nước dùng đậm vị.",
+            "NguyenLieuChinh": ["Bột mì", "Thịt bò", "Rau cải", "Gia vị Trung Hoa"],
+            "CachCheBien": "Kéo mì bằng tay, nấu nước dùng từ xương bò và gia vị, trụng mì và chan nước dùng cùng thịt bò thái lát."
+        },
+        "ID_ChiTietMon_22": {
+            "MoTa": "Mì Trường Thọ là món mì truyền thống thường dùng vào dịp sinh nhật với sợi mì dài tượng trưng cho sự trường thọ.",
+            "NguyenLieuChinh": ["Mì dài", "Trứng", "Nấm đông cô", "Rau cải", "Nước dùng thanh ngọt"],
+            "CachCheBien": "Luộc mì, xào nấm và rau, trụng trứng lòng đào, kết hợp tất cả với nước dùng nhẹ và trang trí đẹp mắt."
+        }
+    }
+}

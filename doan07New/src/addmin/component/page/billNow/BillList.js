@@ -41,13 +41,14 @@ const BillNow = () => {
         fetchdata();
     }, []);
 
-    const checkoutbutton = async (ID_ChiTietBan) => {
+    const checkoutbutton = async (ID_ChiTietBan, paymentMethod) => {
         console.log('Gửi ID:', ID_ChiTietBan); // giúp debug
 
         try {
             const res = await axios.post(
                 'http://localhost:5000/manage/checked',
-                { ID_ChiTietBan },
+                { ID_ChiTietBan, paymentMethod },
+
                 { withCredentials: true },
             );
             if (res.data.success) {
@@ -142,6 +143,8 @@ const BillNow = () => {
                     setCashGiven={setCashGiven}
                     selectedBillId={selectedBillId}
                     checkoutbutton={checkoutbutton}
+                    paymentMethod={paymentMethod}
+                    setPaymentMethod={setPaymentMethod}
                 />
             )}
         </div>

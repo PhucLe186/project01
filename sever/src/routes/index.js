@@ -9,6 +9,7 @@ const manage = require('./manage')
 const Bill= require('./bill');
 const admin= require('./admin')
 const customer=require('./customer')
+const revenue=require('./revenue')
 
 function route(app) {
   app.use('/menu', Menu);
@@ -22,6 +23,7 @@ function route(app) {
   app.use('/api/bills', Bill);
   app.use('/customer', customer)
   app.use('/admin', admin)
+  app.use('/revenue', revenue)
 
 
 }

@@ -26,17 +26,30 @@ class ManageController {
     }
 
     async checkout(req, res){
-        const{ID_ChiTietBan}=req.body
+        const{ID_ChiTietBan, paymentMethod}=req.body
         const data= db.ref(`chitietban/${ID_ChiTietBan}`)
         const snapshot=await data.once("value")
         const item= snapshot.val()
         await data.update({trangthai:3})
         
-
-        const hoadon= item.Ma_HoaDon
-        const bill= db.ref(`bills/${hoadon}`)
+        const bill= db.ref(`bills/`)
         const snap=await bill.once("value")
-        await bill.update({trangthai: "Đã thanh toán" })
+        const hoadon=snap.val()
+        let ID_HoaDon = null;
+        for (const id in hoadon) {
+            if (hoadon[id].ID_ChiTietBan === ID_ChiTietBan) {
+                ID_HoaDon = id;
+                break;
+            }
+        }
+        
+      const bills= db.ref(`bills/${ID_HoaDon}`)
+      await bills.update({trangthai:"Đã thanh toán", TongTien: item.TongTien, ThanhTien: item.ThanhTien, phuongthuc: paymentMethod==='cod'? 'Tiền mặt':'paymentMethod'})
+
+      const table_id=item.ID_Ban
+
+      const table= db.ref(`ban/${table_id}`)
+      await table.update({TinhTrangBan:0})
         
         
         res.json({success:true})

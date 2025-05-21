@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "main": "src/server.js",
   "scripts": {
-
     "start": "nodemon --inspect src/sever.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    
     "type": "git",
     "url": "git+https://github.com/PhucLe186/server1.git"
   },
@@ -20,11 +18,11 @@
   "homepage": "https://github.com/PhucLe186/server1#readme",
   "description": "",
   "lint-staged": {
-      "src/**/*.{js,json}": "prettier --single-quote --tab-width 4 --trailing-comma all --write"
-    },
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+    "src/**/*.{js,json}": "prettier --single-quote --tab-width 4 --trailing-comma all --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
@@ -37,6 +35,7 @@
     "express-session": "^1.18.1",
     "firebase-admin": "^13.2.0",
     "nodemailer": "^6.10.0",
+    "puppeteer": "^24.8.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

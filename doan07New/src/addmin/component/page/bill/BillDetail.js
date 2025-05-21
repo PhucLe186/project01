@@ -8,7 +8,6 @@ const BillDetail = () => {
     const navigate = useNavigate();
     const [bill, setBill] = useState([]);
 
-    
     useEffect(() => {
         const fetchBill = async () => {
             try {
@@ -22,7 +21,7 @@ const BillDetail = () => {
                 const transform = data.map((order) => ({
                     ...order,
 
-                    MonAn: Object.values(order.MonAn).map((mon) => ({
+                    MonAn: Object.values(order.chitietban.MonAn).map((mon) => ({
                         image: mon.HinhAnhMon,
                         TenMonAn: mon.TenMonAn,
                         Gia: mon.ThanhTien,
@@ -61,13 +60,13 @@ const BillDetail = () => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Chi tiết hóa đơn #{bill.id}</h2>
+            <h2 className={styles.title}>Chi tiết hóa đơn #{bill.ID_HoaDon}</h2>
             <div className={styles.info}>
                 <p>
-                    <strong>Khách hàng:</strong> {bill.TenKhachHang}
+                    <strong>Khách hàng:</strong> {bill.chitietban?.TenKhachHang}
                 </p>
                 <p>
-                    <strong>Bàn:</strong> {bill.table?.TenBan}
+                    <strong>Bàn:</strong> {bill.ban?.TenBan}
                 </p>
                 <p>
                     <strong>Trạng thái:</strong>
@@ -98,8 +97,11 @@ const BillDetail = () => {
                     ))}
                 </tbody>
             </table>
-
-            <h3 className={styles.total}>Tổng tiền: {Number(bill.TongTien).toLocaleString()} VND</h3>
+            <h3 className={styles.total}>Tạm tính: {Number(bill.chitietban?.ThanhTien).toLocaleString()} VND</h3>
+            <h3 className={styles.total}>
+                Voucher: {Number(bill.chitietban?.ThanhTien - bill.chitietban?.TongTien).toLocaleString()} VND
+            </h3>
+            <h3 className={styles.total}>Tổng tiền: {Number(bill.chitietban?.TongTien).toLocaleString()} VND</h3>
 
             <div className={styles.actions}>
                 <button className={styles.editButton} onClick={handleEdit}>

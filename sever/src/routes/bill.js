@@ -3,7 +3,7 @@ const BillController = require("../app/controller/billController");
 
 const router = express.Router();
 
-
+router.get("/export-bill/:id", BillController.exportBillToPDF)
 router.get("/:id",BillController.getBillById);
 router.put("/:id",BillController.updateBill);
 router.delete("/:id", BillController.deleteBill);

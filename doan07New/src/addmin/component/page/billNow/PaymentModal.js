@@ -67,7 +67,6 @@ function PaymentModal({
                         if (paymentMethod === 'cod') {
                             setShowPaymentModal(false);
                             setShowCodPopup(true);
-                            setPaymentMethod('');
                         }
                     }}
                 >

@@ -21,8 +21,7 @@ const BillList = () => {
                         ...table[key],
                     };
                 });
-                const list= traindata.filter(item=> item.trangthai==='Đã thanh toán')
-                
+                const list = traindata.filter((item) => item.trangthai === 'Đã thanh toán');
 
                 setBills(list);
             })
@@ -55,21 +54,36 @@ const BillList = () => {
                                 bills.map((bill, idx) => (
                                     <tr key={idx}>
                                         <td>{bill.ID_HoaDon}</td>
-                                        <td>{bill.TenKhachHang}</td>
-                                        <td>{bill.table?.TenBan}</td>
-                                        
-                                            <td> 
-                                                <div className={cx( 'status',  bill.trangthai === 'Đã thanh toán' ? 'paid' : 'unpaid')}
-                                                >{bill.trangthai}</div>
-                                            </td>
-                                        
+                                        <td>{bill.chitiet.TenKhachHang}</td>
+                                        <td>{bill.ban.TenBan}</td>
+
+                                        <td>
+                                            <div
+                                                className={cx(
+                                                    'status',
+                                                    bill.trangthai === 'Đã thanh toán' ? 'paid' : 'unpaid',
+                                                )}
+                                            >
+                                                {bill.trangthai}
+                                            </div>
+                                        </td>
+
                                         <td>
                                             <Link to={`/bills/${bill.ID_HoaDon}`} className={cx('detailButton')}>
                                                 chi tiết
                                             </Link>
-                                            <Link to={`/bills/${bill.ID_HoaDon}`} className={cx('printButton')}>
-                                                <FaPrint/> In
-                                            </Link>
+
+                                            <button
+                                                className={cx('printButton')}
+                                                onClick={() => {
+                                                    window.open(
+                                                        `http://localhost:5000/api/bills/export-bill/${bill.ID_HoaDon}`,
+                                                        '_blank',
+                                                    );
+                                                }}
+                                            >
+                                                <FaPrint /> In
+                                            </button>
                                         </td>
                                     </tr>
                                 ))

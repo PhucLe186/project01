@@ -41,15 +41,12 @@ async book(req, res){
       tongtien+=mon.ThanhTien*mon.soLuong
       
     }  
-       const number = Math.floor(10000000 + Math.random() * 90000000); // đảm bảo đủ 8 chữ số
-  
-      const Ma_HoaDon=`HD${number}`
+       
       const ID_ChiTietBan= db.ref(`chitietban`).push().key; 
       const datban=db.ref(`chitietban/${ID_ChiTietBan}`);
-       console.log('14')
+       
       await datban.set({
         UserID,
-        Ma_HoaDon,
         ID_Ban, 
         TenKhachHang,
         SoDienThoai, 

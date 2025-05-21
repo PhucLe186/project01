@@ -3,8 +3,31 @@ class MenuController {
   async index(req, res) {
       const menu=db.ref("monan");
       const snapshot= await menu.once("value");
-      if(snapshot.exists()){
-        res.json(snapshot.val());
+      const data=(snapshot.val())
+
+      const id = Object.keys(data).map(key => ({
+        ID_MonAn: key,
+        ...data[key]
+      }));
+console.log(id)
+
+
+      const ids = Object.values(id).map(item => item.ID_ChiTietMon);
+
+      
+      const list_id= await Promise.all(
+        ids.map(id=> db.ref(`ChiTietMonAn/${id}`).once('value'))
+    )
+    const detail=list_id.map(snap=>snap.val())
+    const bigdata=Object.values(id).map((item,idx)=>({
+        
+        ...item,
+        chitietmon:detail[idx]
+    }))
+   
+      
+      if(bigdata){
+        res.json({bigdata});
       }else{
         res.status(404).json({message: "không có dữ liệu món ăn"})
       }   

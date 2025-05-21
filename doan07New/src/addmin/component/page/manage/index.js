@@ -7,9 +7,11 @@ import moment from 'moment/moment';
 const cx = classNames.bind(styles);
 
 function Manager() {
+    const [selectedNote, setSelectedNote] = useState('');
+
     const [bookings, setBookings] = useState([]);
     const [table, settable] = useState([]);
-
+    const [show, setShow] = useState(false);
     const [selected, setSelected] = useState('');
     const [newBooking, setNewBooking] = useState({
         TenKhachHang: '',
@@ -141,7 +143,17 @@ function Manager() {
                             <td>{moment(booking.ThoiGian).format('HH:mm DD-MM-YYYY')}</td>
                             <td>{booking.table?.TenBan}</td>
                             <td>{booking.SoLuong}</td>
-                            <td>{booking.note}</td>
+                            <td>
+                                <button
+                                    className={cx('delete-btn')}
+                                    onClick={() => {
+                                        setSelectedNote(booking.note || 'Không có ghi chú');
+                                        setShow(true);
+                                    }}
+                                >
+                                    xem ghi chú
+                                </button>
+                            </td>
                             <td>{booking.ThanhTien ? booking.ThanhTien.toLocaleString() : '0'} VND</td>
                             <td>
                                 <button
@@ -155,6 +167,13 @@ function Manager() {
                     ))}
                 </tbody>
             </table>
+            {show === true && (
+                <div className={cx('notePopup')}>
+                    <h3>Ghi chú</h3>
+                    <p>{selectedNote}</p>
+                    <button onClick={() => setShow(false)}>Đóng</button>
+                </div>
+            )}
             <div className={cx('add-customer-form')}>
                 <h3>Thêm Khách Hàng Mới</h3>
                 <form

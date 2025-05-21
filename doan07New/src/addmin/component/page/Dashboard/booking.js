@@ -1,29 +1,56 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { useEffect, useState } from 'react';
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import classNames from 'classnames/bind';
-import styles from './booking.module.scss'
+import styles from './booking.module.scss';
+import axios from 'axios';
 
-const cx= classNames.bind(styles)
+const cx = classNames.bind(styles);
+const COLORS = ['#d4af37', '#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#00C49F'];
 
 function Dashboard() {
-    const data = [
-        { date: '24 Apr', revenue: 1000000, profit: 500000 },
-        { date: "May '23", revenue: 900000, profit: 450000 },
-        { date: '08 May', revenue: 2000000, profit: 1000000 },
-        { date: '16 May', revenue: 4000000, profit: 2000000 },
-    ];
+    const [data, setData] = useState([]);
+
+    const fetchData = async () => {
+        try {
+            const res = await axios.get('http://localhost:5000/revenue/');
+            if (res.data.success) {
+                setData(res.data.data);
+            }
+        } catch (err) {
+            console.error('Lỗi lấy dữ liệu:', err);
+        }
+    };
+
+    useEffect(() => {
+        fetchData(); // Gọi khi component vừa load
+    }, []);
+
     return (
-        <div className={cx("chart-container")}>
-            <ResponsiveContainer width="95%" height={300}>
-                <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis domain={['auto', 'auto']} />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="revenue" stroke="#007bff" name="Doanh thu" />
-                    <Line type="monotone" dataKey="profit" stroke="#28a745" name="Lợi nhuận" />
-                </LineChart>
-            </ResponsiveContainer>
+        <div style={{ padding: 20 }}>
+            <h2>Biểu đồ tròn Doanh thu (Tổng tất cả các ngày)</h2>
+
+            <div style={{ width: '100%', height: 400, marginTop: 20 }}>
+                <ResponsiveContainer>
+                    <PieChart>
+                        <Pie
+                            data={data}
+                            dataKey="revenue"
+                            nameKey="date"
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={120}
+                            fill="#d4af37"
+                            label={(entry) => `${entry.date}: ${entry.revenue.toLocaleString()} VNĐ`}
+                        >
+                            {data.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                            ))}
+                        </Pie>
+                        <Tooltip formatter={(v) => `${v.toLocaleString()} VNĐ`} />
+                        <Legend />
+                    </PieChart>
+                </ResponsiveContainer>
+            </div>
         </div>
     );
 }

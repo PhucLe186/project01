@@ -3,7 +3,16 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-function showCodPopup({ setShowCodPopup, price, cashGiven, setCashGiven, checkoutbutton, selectedBillId }) {
+function showCodPopup({
+    setShowCodPopup,
+    price,
+    cashGiven,
+    setCashGiven,
+    checkoutbutton,
+    selectedBillId,
+    paymentMethod,
+    setPaymentMethod,
+}) {
     return (
         <div className={cx('overlay')}>
             <div className={cx('codPopup')}>
@@ -32,7 +41,8 @@ function showCodPopup({ setShowCodPopup, price, cashGiven, setCashGiven, checkou
                     <button
                         onClick={() => {
                             setShowCodPopup(false);
-                            checkoutbutton(selectedBillId);
+                            checkoutbutton(selectedBillId, paymentMethod);
+                            setPaymentMethod('');
                         }}
                     >
                         Xác nhận thanh toán
