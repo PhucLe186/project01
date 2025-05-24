@@ -1,0 +1,328 @@
+.container {
+  background-color: #fffdfa;
+  padding: 4rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 1400px;
+  margin: 4rem auto;
+  font-family: 'Lato', sans-serif;
+}
+.addButton {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background-color: #d4af37;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.headerRow {
+  background-color: #d4af37;
+  color: white;
+  font-size: 1.4rem;
+  height: 70px;
+}
+
+.cell {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.dataRow:nth-child(even) {
+  background-color: #fefcf8;
+}
+
+.dataRow:hover {
+  background-color: #f5f0e8;
+}
+
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.cell button,
+.cell .actionButton {
+  background-color: #d4af37;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+}
+
+.cell button:hover,
+.cell .actionButton:hover {
+  background-color: #b89530;
+}
+.scrollCell {
+  max-width: 300px; /* hoặc chiều rộng bạn muốn */
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* Cho Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+/* Cho Chrome, Edge, Safari */
+.scrollCell::-webkit-scrollbar {
+  height: 4px;          /* chiều cao thanh cuộn rất mỏng */
+}
+
+.scrollCell::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollCell::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1); /* màu mờ nhẹ */
+  border-radius: 10px;
+  height: 4px; /* đảm bảo chiều cao ngắn */
+}
+.notePopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fffdfa;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 24px 32px;
+  width: 400px;
+  max-width: 90%;
+  z-index: 1000;
+  text-align: center;
+}
+
+.notePopup h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.notePopup p {
+  font-size: 16px;
+  color: #333;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.notePopup button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.notePopup button:hover {
+  background-color: #c29c2e;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fffdfa;
+  border-radius: 20px;
+  padding: 32px;
+  width: 550px;
+  max-width: 90%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #eee4c9;
+}
+
+.modalTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: auto;
+}
+
+.paymentOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e7dfc8;
+  background-color: #fff;
+  padding: 18px 20px;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+.paymentOption input[type='radio'] {
+  position: absolute;
+  left: 45%;     // Đẩy sát phải
+  top: 50%;
+  transform: translateY(-50%) scale(1.3);
+  accent-color: #d4af37;
+  cursor: pointer;
+}
+
+.paymentOption:hover {
+  border-color: #d4af37;
+  background-color: #fffbed;
+}
+
+.paymentOption input[type='radio'] {
+  transform: scale(1.3);
+  accent-color: #d4af37;
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 85%;
+}
+
+.info strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.info span {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.confirmBtn {
+  margin-top: 28px;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fffdfa;
+  background: linear-gradient(to right, #d4af37, #b9992e);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.confirmBtn:hover {
+  background: linear-gradient(to right, #c29f34, #a88523);
+}
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.codPopup {
+  background: #fffdfa;
+  padding: 30px 25px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.codPopup h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.formGroup input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonGroup button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buttonGroup button:first-child {
+  background-color: #d4af37;
+  color: white;
+}
+
+.buttonGroup button:last-child {
+  background-color: #ccc;
+}
+
+
+
+

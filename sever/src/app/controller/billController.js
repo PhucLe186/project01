@@ -95,10 +95,10 @@ async addBill (req, res) {
         const item =snapshot.val()
 
         const table_id=item.ID_Ban
+        const Ma_HoaDon=item.Ma_HoaDon
         const table= db.ref(`ban/${table_id}`)
-        const number = Math.floor(10000000 + Math.random() * 90000000); // đảm bảo đủ 8 chữ số
-        const Ma_HoaDon=`HD${number}`
-       const now = new Date().toISOString();
+       
+        const now = new Date().toISOString();
 
         const billist= db.ref(`bills/${Ma_HoaDon}`)
         await billist.set({
@@ -110,11 +110,11 @@ async addBill (req, res) {
             ThanhTien:0,
             trangthai:'chưa thanh toán' }
         )
-        await data.update({trangthai:2})
+        await data.update({trangthai:2, ThoiGian:now})
         await table.update({TinhTrangBan:2})
         
 
-        res.status(201).json({ success: true, message: "Thêm hóa đơn thành công", });
+        res.status(201).json({ success: true, message: "Thêm hóa đơn thành công" });
     } catch (error) {
         console.error("Lỗi khi thêm hóa đơn:", error);
         res.status(500).json({ success: false, message: "Lỗi server", error: error.toString() });

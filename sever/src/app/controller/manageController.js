@@ -32,6 +32,8 @@ class ManageController {
         const item= snapshot.val()
         await data.update({trangthai:3})
         
+        const now = new Date().toISOString();
+
         const bill= db.ref(`bills/`)
         const snap=await bill.once("value")
         const hoadon=snap.val()
@@ -44,7 +46,7 @@ class ManageController {
         }
         
       const bills= db.ref(`bills/${ID_HoaDon}`)
-      await bills.update({trangthai:"Đã thanh toán", TongTien: item.TongTien, ThanhTien: item.ThanhTien, phuongthuc: paymentMethod==='cod'? 'Tiền mặt':'paymentMethod'})
+      await bills.update({trangthai:"Đã thanh toán", TongTien: item.TongTien, thoigian:now, ThanhTien: item.ThanhTien, phuongthuc: paymentMethod==='cod'? 'Tiền mặt':'paymentMethod'})
 
       const table_id=item.ID_Ban
 
