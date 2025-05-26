@@ -15,6 +15,7 @@ function Expense() {
     const [expenseList, setExpenseList] = useState([]);
     const [showForm, setShowForm] = useState(false);
 
+    const ngay = new Date(day).toISOString().slice(0, 10);
     const expense = {
         day,
         expenseType,
@@ -99,7 +100,7 @@ function Expense() {
                         <label className={cx('label')} htmlFor="ngay">
                             Ngày
                         </label>
-                        <input id="ngay" type="date" className={cx('input')} value={day} readOnly />
+                        <input id="ngay" type="date" className={cx('input')} value={ngay} readOnly />
                     </div>
 
                     <div className={cx('formRow')}>

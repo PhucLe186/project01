@@ -57,5 +57,52 @@ class ManageController {
         res.json({success:true})
     }
 
+async book(req, res){
+    try{
+
+    const {TenKhachHang, ID_Ban, SoDienThoai, SoLuong, ThoiGian,note, ThanhTien, TongTien, selectedFoods }=req.body
+    
+
+      const MonAn={}
+      selectedFoods.forEach(item =>{
+          MonAn[item.ID_MonAn]={
+          HinhAnhMon:item.HinhAnhMon,
+          TenMonAn:item.TenMonAn,
+          soLuong:item.SoLuong,
+          ThanhTien:item.ThanhTien
+        }
+      });
+      
+   
+      const number = Math.floor(10000000 + Math.random() * 90000000); 
+      const Ma_HoaDon=`HD${number}`
+      const ID_ChiTietBan= db.ref(`chitietban`).push().key; 
+      const datban=db.ref(`chitietban/${ID_ChiTietBan}`);
+       
+      await datban.set({
+        Ma_HoaDon,
+        ID_Ban, 
+        TenKhachHang,
+        SoDienThoai, 
+        SoLuong, 
+        ThoiGian,
+        note, 
+        MonAn,
+        trangthai: 1,
+        ThanhTien,
+        TongTien,
+       
+      })
+     
+      await db.ref(`ban/${ID_Ban}`).update({TinhTrangBan:1})
+      await Cart.remove();
+      return res.status(200).json({success: true, message: "đặt bàn thành công"})
+    }
+    catch(error){
+     
+      res.status(500).json({ error: "lỗi đầy mình"})
+    }
+}
+
 }
 module.exports= new ManageController()

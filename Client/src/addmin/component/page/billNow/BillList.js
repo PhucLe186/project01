@@ -43,8 +43,6 @@ const BillNow = () => {
         fetchdata();
     }, []);
     const checkoutbutton = async (ID_ChiTietBan, paymentMethod) => {
-        
-
         try {
             const res = await axios.post(
                 'http://localhost:5000/manage/checked',
@@ -55,6 +53,7 @@ const BillNow = () => {
             if (res.data.success) {
                 alert('Thanh toán thành công');
                 setBills((prevBills) => prevBills.filter((bill) => bill.ID_ChiTietBan !== ID_ChiTietBan));
+                setCashGiven('');
             }
         } catch (error) {
             console.error('Lỗi khi thanh toán:', error);
@@ -64,7 +63,7 @@ const BillNow = () => {
     return (
         <div className={cx('container')}>
             <h2 className={cx('title')}>Đang Phục Vụ</h2>
-             <Link to={routesConfig.addbill} className={cx('addButton')}>
+            <Link to={routesConfig.addbill} className={cx('addButton')}>
                 + Thêm hóa đơn
             </Link>
             <table className={cx('table')}>

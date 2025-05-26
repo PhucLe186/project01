@@ -33,14 +33,14 @@ function Dashboard() {
     const [to, setTo] = useState('');
 
     useEffect(() => {
-        setRevenue([
-            { date: '2025-05-20', revenue: 5000000, expense: 3000000, profit: 2000000 },
-            { date: '2025-05-21', revenue: 6200000, expense: 3500000, profit: 2700000 },
-            { date: '2025-05-22', revenue: 5800000, expense: 4000000, profit: 1800000 },
-            { date: '2025-05-23', revenue: 6400000, expense: 3100000, profit: 3300000 },
-            { date: '2025-05-24', revenue: 7100000, expense: 4500000, profit: 2600000 },
-            { date: '2025-05-23', revenue: 6400000, expense: 8100000, profit: -1700000 },
-        ]);
+        // setRevenue([
+        //     { date: '2025-05-20', revenue: 5000000, expense: 3000000, profit: 2000000 },
+        //     { date: '2025-05-21', revenue: 6200000, expense: 3500000, profit: 2700000 },
+        //     { date: '2025-05-22', revenue: 5800000, expense: 4000000, profit: 1800000 },
+        //     { date: '2025-05-23', revenue: 6400000, expense: 3100000, profit: 3300000 },
+        //     { date: '2025-05-24', revenue: 7100000, expense: 4500000, profit: 2600000 },
+        //     { date: '2025-05-23', revenue: 6400000, expense: 8100000, profit: -1700000 },
+        // ]);
         fetchRevenue();
     }, []);
     const fetchRevenue = async () => {
@@ -59,14 +59,14 @@ function Dashboard() {
             if (customerRes.data.success) setCustomer(customerRes.data.data);
             if (billRes.data.success) setBill(billRes.data.data);
             if (foodRes.data.success) setFood(foodRes.data.data);
-            // if (revenueRes.data.success) {
-            //     const data = revenueRes.data.data;
-            //     const processedData = data.map((data) => ({
-            //         ...data,
-            //         profit: data.revenue - data.expense,
-            //     }));
-            //     setRevenue(processedData);
-            // }
+            if (revenueRes.data.success) {
+                const data = revenueRes.data.data;
+                const processedData = data.map((data) => ({
+                    ...data,
+                    profit: data.revenue - data.expense,
+                }));
+                setRevenue(processedData);
+            }
         } catch (error) {
             console.error('Lỗi khi lấy dữ liệu doanh thu:', error);
         }
@@ -129,7 +129,7 @@ function Dashboard() {
                 <h2>Biểu đồ Doanh thu, Chi phí và Lợi nhuận theo ngày</h2>
                 <div style={{ width: '100%', height: 400, marginTop: 16 }}>
                     <ResponsiveContainer>
-                        <LineChart data={revenue} margin={{ top: 10, right: 10, left: 20, bottom: 40 }}>
+                        <LineChart data={revenue} margin={{ top: 10, right: 10, left: 35, bottom: 40 }}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="date" angle={-30} textAnchor="end" />
                             <YAxis tickFormatter={(v) => v.toLocaleString()} />

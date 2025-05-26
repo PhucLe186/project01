@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+$order-background: #fffdfa;
+$highlight-color: #d4af37;
+$shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+$radius: 12px;
+
 .management-container {
     min-width: 800px;
     margin: 0 auto;
@@ -6,6 +13,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    height: 100vh;
 }
 
 h2 {
@@ -13,16 +21,16 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Bảng danh sách đặt bàn */
 .table {
     width: 100%;
-    border-collapse: separate; /* để border-radius hiệu quả */
-    border-spacing: 0 12px; /* khoảng cách giữa các dòng */
+    border-collapse: separate;
+    border-spacing: 0 12px;
     font-family: 'Lato', sans-serif;
-    background-color: #fffdfa; /* nền trắng ngà dịu nhẹ */
-    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.15); /* bóng vàng kim nhẹ */
+    background-color: #fffdfa;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.15);
     border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .table thead tr {
@@ -92,74 +100,6 @@ h2 {
     background-color: #b28e23;
 }
 
-/* Form thêm khách hàng mới */
-.add-customer-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; // căn giữa form
-    gap: 1rem;
-
-    input,
-    select {
-        width: 100%;
-        max-width: 400px; // giới hạn độ rộng
-        padding: 0.7rem 1rem;
-        font-size: 1rem;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-family: 'Lato', sans-serif;
-
-        &:focus {
-            outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-        }
-    }
-}
-
-.money-input-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px; // ngang bằng form
-    margin: 0 auto; // căn giữa
-
-    .money-input {
-        width: 100%;
-        padding-right: 3rem; // để dành chỗ nút +
-        font-size: 1.2rem;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        background-color: white;
-        font-family: 'Lato', sans-serif;
-
-        &:focus {
-            outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-        }
-    }
-
-    .money-add-button {
-        position: absolute;
-        right: 0.4rem;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #d4af37;
-        border: none;
-        border-radius: 50%;
-        color: white;
-        width: 32px;
-        height: 32px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: #b88d2a;
-        }
-    }
-}
 .notePopup {
     position: fixed;
     top: 50%;
@@ -200,4 +140,11 @@ h2 {
 
 .notePopup button:hover {
     background-color: #c29c2e;
+}
+
+.money-input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
 }

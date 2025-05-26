@@ -48,7 +48,7 @@ async book(req, res){
        
       await datban.set({
         Ma_HoaDon,
-        UserID,
+        // UserID,
         ID_Ban, 
         TenKhachHang,
         SoDienThoai, 
